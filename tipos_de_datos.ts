@@ -1,12 +1,65 @@
+// links muy buenos
 //https://www.typescriptlang.org/docs/handbook/enums.html
+//http://lineadecodigo.com/typescript/forzar-tipo-variable-typescript/
+//http://lineadecodigo.com/typescript/variables-bloque-typescript/
+//http://lineadecodigo.com/tag/typescript-array/
+
 let buleano:boolean = true;
 let numerico:number = 12.9;
-let cadena:string = "cadena";
+let cadena:string = `cadena de
+casa`;
+
+
+
+console.log(cadena);
+
+//********************************************************************
+//***************** Array ***************************************
+
 let array: string[]= ["Silvio","Zabala"];
 
-let tupla:[string,string]=["Clave","valor"];
+//Foreach con todos los parametros para poder modificar el array
+array.forEach((a,indice,arreglo) =>{
 
-//Enumerados
+    if (a ==="Zabala") {
+        arreglo[indice]="Pedro";
+    }
+
+});
+console.log(array);
+
+//No me deja hacer un push
+let arraySoloLectura:ReadonlyArray<string> = ["Silvio","Javier"];
+arraySoloLectura.forEach((a)=>console.log(a));
+
+
+
+//********************************************************************
+//***************** Fin Array ***************************************
+
+
+//********************************************************************
+//***************** Tupla ***************************************
+//Es  un array tipado
+let tupla:[string,number,boolean]=["Silvio",39,true];
+
+tupla.forEach((elemento:any)=> console.log(elemento));
+
+tupla.push("Carina",40,false);
+
+tupla.forEach((elemento:any)=> console.log(elemento));
+
+console.log(` Cantidad de elementos ${tupla.length}`);
+
+
+//********************************************************************
+//***************** Fin Tupla ***************************************
+
+
+//********************************************************************
+//***************** Enumerados ***************************************
+ 
+
 enum deString {azul="jaja",rojo=10};
 
 let valorenum:deString = deString.rojo;
@@ -26,7 +79,9 @@ let valorTextualEnumerado:string = colores[2];
 console.log(`Valor Enumerado ${valorEnumerado} Valor textual ${valorTextualEnumerado}`);
 
 
-//Fin de Enumerados
+
+//********************************************************************
+//***************** Fin Enumerados ***************************************
 
 let cualquiera:any = {
     nombre:'Silvio',
