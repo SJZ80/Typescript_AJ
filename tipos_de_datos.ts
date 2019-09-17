@@ -5,8 +5,13 @@ let cadena:string = "cadena";
 let array: string[]= ["Silvio","Zabala"];
 let tupla:[string,string]=["Clave","valor"];
 enum colores {amarillo,azul,rojo};
+let cualquiera:any = {
+    nombre:'Silvio',
+    edad: 39
+};
+
+console.log(cualquiera);
 
 
 
-
-console.log(colores.azul + colores.rojo);
+ 
